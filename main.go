@@ -28,6 +28,8 @@ func main() {
 	// int8 ranges from -128 to 127
 	// bits dictate the range of numbers that can be used.
 
+	println(numOne, numTwo, numThree)
+
 	// floats
 
 	var scoreOne float32 = 25.87
@@ -35,4 +37,6 @@ func main() {
 	// float64 provides higher precision
 	scoreThree := 87483.4
 	// := is automatically float64
+
+	println(scoreOne, scoreTwo, scoreThree)
 }
