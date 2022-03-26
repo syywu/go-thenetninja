@@ -53,4 +53,9 @@ func main() {
 	fmt.Printf("you scored %f points! \n", 255.55)
 	fmt.Printf("you scored %0.1f points! \n", 255.55)
 	// f = floats. specify how many decimal point you want e.g. 0.1 = 1 decimal point, 0.2 = 2 etc
+
+	// Sprintf (saved formatted strings)
+
+	var str = fmt.Sprintf("my name is %v and my age is %v \n", name, age)
+	println("the saved string is: ", str)
 }
