@@ -39,4 +39,18 @@ func main() {
 	// := is automatically float64
 
 	println(scoreOne, scoreTwo, scoreThree)
+
+	// Print & format
+
+	name := "Sam"
+	age := 28
+
+	fmt.Println("my name is", name, "and my age is", age)
+	fmt.Printf("my name is %v and my age is %v \n", name, age)
+	fmt.Printf("my name is %q and my age is %q \n", name, age)
+	// order matters in printf. %_ = format specifiers, v stands for variable, q = quote
+	fmt.Printf("age is a type of %T \n", age) //T = type
+	fmt.Printf("you scored %f points! \n", 255.55)
+	fmt.Printf("you scored %0.1f points! \n", 255.55)
+	// f = floats. specify how many decimal point you want e.g. 0.1 = 1 decimal point, 0.2 = 2 etc
 }
