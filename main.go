@@ -17,4 +17,11 @@ func main() {
 	// uint are only positive numbers
 	var numThree int8 = -12
 	// int8 ranges from -128 to 127
+	// bits dictate the range of numbers that can be used.
+
+	// floats
+
+	var scoreOne float32 = 25.87
+	var scoreTwo float64 = 763873548237.34
+	// float64 provides higher precision
 }
