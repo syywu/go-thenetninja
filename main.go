@@ -58,4 +58,17 @@ func main() {
 
 	var str = fmt.Sprintf("my name is %v and my age is %v \n", name, age)
 	println("the saved string is: ", str)
+
+	// arrays & slices
+
+	// var days [3]int = [3]int{20, 25, 35}
+	var days = [3]int{20, 25, 35}
+	// arrays have a fixed length so specify the numbers of elements in an array
+
+	people := [4]string{"bob", "bill", "jill", "jon"}
+
+	fmt.Println(days, len(days))
+	fmt.Println(people, len(people))
+	// len() to get the length of arr
+
 }
