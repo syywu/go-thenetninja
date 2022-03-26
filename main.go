@@ -4,11 +4,20 @@ import "fmt"
 
 // only one main func at the entry file. must called main to match with package
 func main() {
-	var nameOne string = "mario"
-	nameTwo := "luigi"
-	// both are same. := shorthand cannot be used out
 
-	fmt.Println(nameOne, nameTwo)
+	// string
+	var nameOne string = "mario"
+	var nameTwo = "joe"
+	nameThree := "luigi"
+	// both are same. := shorthand cannot be used out
+	var nameFour string
+
+	fmt.Println(nameOne, nameTwo, nameThree)
+
+	nameOne = "bob"
+	nameFour = "sam"
+
+	fmt.Println(nameOne, nameFour)
 
 	// bits & memory
 
@@ -24,4 +33,6 @@ func main() {
 	var scoreOne float32 = 25.87
 	var scoreTwo float64 = 763873548237.34
 	// float64 provides higher precision
+	scoreThree := 87483.4
+	// := is automatically float64
 }
