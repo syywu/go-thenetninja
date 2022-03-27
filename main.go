@@ -47,22 +47,21 @@ func getInitials(n string) (string, string) { //returns 2 strings
 	return initials[0], "_"
 }
 
-// packages
-var score = 99.5
-
+/* packages
+var score = 99.5 //can only be found outside main(), inside the package main scope
 // cannot use shorthand outside of functions
-// scoreTwo := 50
+// scoreTwo := 50 */
 
 // only one main func at the entry file. must called main to match with package
 func main() {
 
-	// packages
+	/* packages
 	sayHello("mario")
 	showScore()
 
 	for _, v := range points {
 		fmt.Println(v)
-	}
+	} */
 
 	// functions
 	sayGreeting("mario")
@@ -288,6 +287,18 @@ func main() {
 		fmt.Printf("the value at pos %v is %v \n", index, val)
 		//the value at pos 0 is mario. this is the input as index is not equal to 0
 		// the value at pos 2 is yoshi as index != 1
+
+		// maps - like obj in JS. key : value pairs
+		// specify key type in [] and value type before {}
+		menu := map[string]float64{
+			"soup":           4.99,
+			"pie":            7.99,
+			"salad":          6.99,
+			"toffee pudding": 3.55,
+		}
+
+		fmt.Println(menu)        //map[pie:7.99 salad:6.99 soup:4.99 toffee pudding:3.55]
+		fmt.Println(menu["pie"]) //returns the value = 7.99
 
 	}
 }

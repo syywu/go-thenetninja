@@ -10,6 +10,6 @@ func sayHello(n string) {
 	fmt.Println("hello", n)
 }
 
-func showScore() {
+/* func showScore() {
 	fmt.Println("You scored this many points:", score)
-}
+} */
