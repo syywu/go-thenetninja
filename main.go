@@ -83,4 +83,16 @@ func main() {
 	// can append with slices only!!! it adds 89 to the slices
 
 	fmt.Println(results, len(results))
+
+	// slice ranges
+	rangeOne := people[1:4]  // doesn't include pos 4 element- inclusive of 1st but not 4th element
+	rangeTwo := people[2:]   //includes the last element
+	rangeThree := people[:3] //start from beginning until position 3
+
+	fmt.Println(rangeOne, rangeTwo, rangeThree)
+	fmt.Printf("the type of rangeOne is %T \n", rangeOne)
+
+	rangeOne = append(rangeOne, "koopa")
+	fmt.Println(rangeOne)
+
 }
