@@ -24,12 +24,28 @@ func cycleNames(n []string, f func(string)) {
 	}
 }
 
-func circleArea(r float64) float64 {
-	return math.Pi * r * r //math.Pi is from package math. pi * radius squared
-}
-
 // n is name of type slice with string inside
 // function can be a param inside another function
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r //math.Pi is from package math. pi * radius squared
+} // must state type before {} to specify which type to return
+
+// return mulitple vales
+func getInitials(n string) (string, string) {
+	s := strings.ToUpper(n)           //get all names to be CAPS
+	allNames := strings.Split(s, " ") //splits s into array when there is a space
+
+	var initials []string //declare a varible of type slice called initals where appended initials to be stored
+	for _, v := range allNames {
+		initials = append(initials, v[:1]) //add initials that starts with 0 and ends at 1
+	}
+
+	if len(initials) > 1 {
+		return initials[0], initials[0]
+	}
+	return initials[0], "_"
+}
 
 // only one main func at the entry file. must called main to match with package
 func main() {
@@ -53,6 +69,15 @@ func main() {
 
 	fmt.Println(a1, a2)
 	fmt.Printf("circle 1 area is %0.3f & circle 2 area is %0.3f \n", a1, a2)
+
+	fn1, sn1 := getInitials("tifa lockhart")
+	fmt.Println(fn1, sn1) //T L
+
+	fn2, sn2 := getInitials("cloud strife")
+	fmt.Println(fn2, sn2) //C S
+
+	fn3, sn3 := getInitials("barret")
+	fmt.Println(fn3, sn3) //B _
 
 	// string
 	var nameOne string = "mario"
