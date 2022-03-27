@@ -150,6 +150,7 @@ func main() {
 	// for loop looping through slices
 	char := []string{"mario", "luigi", "yoshi", "peach"}
 
+	// len(char) instead of char.length
 	for i := 0; i < len(char); i++ {
 		fmt.Println(char[i])
 	}
