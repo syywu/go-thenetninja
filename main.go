@@ -32,7 +32,7 @@ func circleArea(r float64) float64 {
 } // must state type before {} to specify which type to return
 
 // return mulitple vales
-func getInitials(n string) (string, string) {
+func getInitials(n string) (string, string) { //returns 2 strings
 	s := strings.ToUpper(n)           //get all names to be CAPS
 	allNames := strings.Split(s, " ") //splits s into array when there is a space
 
@@ -47,8 +47,22 @@ func getInitials(n string) (string, string) {
 	return initials[0], "_"
 }
 
+// packages
+var score = 99.5
+
+// cannot use shorthand outside of functions
+// scoreTwo := 50
+
 // only one main func at the entry file. must called main to match with package
 func main() {
+
+	// packages
+	sayHello("mario")
+	showScore()
+
+	for _, v := range points {
+		fmt.Println(v)
+	}
 
 	// functions
 	sayGreeting("mario")
