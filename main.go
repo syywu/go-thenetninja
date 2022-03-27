@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"sort"
 	"strings"
 )
 
 // functions
-
 func sayGreeting(n string) {
 	fmt.Printf("Good morning %v \n", n)
 }
@@ -18,14 +18,41 @@ func sayBye(n string) {
 	fmt.Printf("Goodbye %v \n", n)
 }
 
+func cycleNames(n []string, f func(string)) {
+	for _, v := range n {
+		f(v) //function takes in value
+	}
+}
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r //math.Pi is from package math. pi * radius squared
+}
+
+// n is name of type slice with string inside
+// function can be a param inside another function
+
 // only one main func at the entry file. must called main to match with package
 func main() {
 
 	// functions
-
 	sayGreeting("mario")
 	sayGreeting("luigi")
 	sayBye("mario")
+
+	cycleNames([]string{"cloud", "barret", "tifa"}, sayGreeting)
+	//Good morning cloud 		//f(v)
+	// Good morning barret
+	// Good morning tifa
+	cycleNames([]string{"cloud", "barret", "tifa"}, sayBye) // invoke inside the cycleNames function
+	// Goodbye cloud
+	// Goodbye barret
+	// Goodbye tifa
+
+	a1 := circleArea(10.5)
+	a2 := circleArea(15)
+
+	fmt.Println(a1, a2)
+	fmt.Printf("circle 1 area is %0.3f & circle 2 area is %0.3f \n", a1, a2)
 
 	// string
 	var nameOne string = "mario"
