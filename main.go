@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 )
 
@@ -111,5 +112,15 @@ func main() {
 
 	// the original value is unchanged
 	fmt.Println("original string value =", greeting)
+
+	// package sort
+
+	minutes := []int{45, 20, 35, 30, 75, 60, 50, 25}
+
+	sort.Ints(minutes) //[20 25 30 35 45 50 60 75] sort alters the origina slice
+	fmt.Println(minutes)
+
+	index := sort.SearchInts(minutes, 30) //returns 2 as slice has been altered. new slice = sort version
+	fmt.Println(index)
 
 }
