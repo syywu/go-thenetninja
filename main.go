@@ -131,4 +131,15 @@ func main() {
 
 	fmt.Println(sort.SearchStrings(characters, "bowser")) //returns index 0
 
+	//loops
+
+	// for keyword is used on go for loops, for all for loops, for in and while
+
+	// while loop example
+	x := 0
+	for x < 5 {
+		fmt.Println("value of x is:", x)
+		x++ // infinite loop without this
+	}
+
 }
