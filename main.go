@@ -147,4 +147,26 @@ func main() {
 		fmt.Println("value of i is:", i)
 	}
 
+	// for loop looping through slices
+	char := []string{"mario", "luigi", "yoshi", "peach"}
+
+	for i := 0; i < len(char); i++ {
+		fmt.Println(char[i])
+	}
+
+	// for in example
+	for index, val := range char {
+		fmt.Printf("the value at position %v is %v \n", index, val)
+		val = "new string"
+	}
+
+	// if you dont want either index or val, replace it with _
+	for _, val := range char {
+		fmt.Print(val, ",") //returns mario,luigi,yoshi,peach,
+		val = "new string"
+	}
+
+	// changing val in a loop does not mutate the original slice
+	fmt.Println(char) //returns [mario luigi yoshi peach]
+
 }
