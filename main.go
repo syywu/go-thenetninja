@@ -314,7 +314,16 @@ func main() {
 		}
 
 		fmt.Println(phonebook)            //map[267584967:mario 845775485:peach 984759373:luigi]
-		fmt.Println(phonebook[845775485]) //mario
+		fmt.Println(phonebook[845775485]) //peach
 
+		// update values inside map
+		fmt.Println(phonebook)
+		fmt.Println(phonebook[845775485])
+
+		phonebook[984759373] = "bowser"
+		fmt.Println(phonebook) //map[267584967:mario 845775485:peach 984759373:bowser]
+
+		phonebook[647583927] = "yoshi"
+		fmt.Println(phonebook) //map[267584967:mario 647583927:yoshi 845775485:peach 984759373:bowser]
 	}
 }
