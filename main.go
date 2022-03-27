@@ -121,6 +121,14 @@ func main() {
 	fmt.Println(minutes)
 
 	index := sort.SearchInts(minutes, 30) //returns 2 as slice has been altered. new slice = sort version
+	// if the number entered in searchints does not exists in slice, then will return an index out of the slice i.e. 8
 	fmt.Println(index)
+
+	characters := []string{"yoshi", "mario", "peach", "bowser", "luigi"}
+
+	sort.Strings(characters) //sorts characters to alphabetical order
+	fmt.Println(characters)
+
+	fmt.Println(sort.SearchStrings(characters, "bowser")) //returns index 0
 
 }
