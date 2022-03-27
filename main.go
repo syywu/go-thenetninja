@@ -142,4 +142,9 @@ func main() {
 		x++ // infinite loop without this
 	}
 
+	// for loop example
+	for i := 0; i < 5; i++ {
+		fmt.Println("value of i is:", i)
+	}
+
 }
