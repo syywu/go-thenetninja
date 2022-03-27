@@ -300,5 +300,11 @@ func main() {
 		fmt.Println(menu)        //map[pie:7.99 salad:6.99 soup:4.99 toffee pudding:3.55]
 		fmt.Println(menu["pie"]) //returns the value = 7.99
 
+		// looping maps
+		for k, v := range menu {
+			fmt.Println(k, "-", v) // soup - 4.99
+			// k instead on index
+		}
+
 	}
 }
