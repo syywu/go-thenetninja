@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // only one main func at the entry file. must called main to match with package
 func main() {
@@ -94,5 +97,19 @@ func main() {
 
 	rangeOne = append(rangeOne, "koopa")
 	fmt.Println(rangeOne)
+
+	// package- strings
+
+	greeting := "hello there friends!"
+
+	fmt.Println(strings.Contains(greeting, "hello"))         //retruns true
+	fmt.Println(strings.Contains(greeting, "bye"))           //returns false
+	fmt.Println(strings.ReplaceAll(greeting, "hello", "hi")) //replace hello to hi. original str remains the same. str is not altered
+	fmt.Println(strings.ToUpper(greeting))                   // HELLO THERE FRIENDS!
+	fmt.Println(strings.Index(greeting, "ll"))               //looks for the index. returns 2 as that is the position of the first 1
+	fmt.Println(strings.Split(greeting, ""))                 //splits the str and splits it with wahtever valued entered. returns an array
+
+	// the original value is unchanged
+	fmt.Println("original string value =", greeting)
 
 }
