@@ -169,4 +169,20 @@ func main() {
 	// changing val in a loop does not mutate the original slice
 	fmt.Println(char) //returns [mario luigi yoshi peach]
 
+	// bool & conditions
+
+	num := 45
+
+	fmt.Println(num <= 50) //true
+	fmt.Println(num >= 50) //false
+	fmt.Println(num == 45) //true
+	fmt.Println(num != 50) //true
+
+	if num < 30 {
+		fmt.Println("num is less than 30")
+	} else if num < 40 {
+		fmt.Println("num is less than 40")
+	} else {
+		fmt.Println("num is not less than 40")
+	}
 }
