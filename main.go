@@ -66,9 +66,21 @@ func main() {
 	// arrays have a fixed length so specify the numbers of elements in an array
 
 	people := [4]string{"bob", "bill", "jill", "jon"}
+	people[1] = "mario"
+	// this will change bill to mario
 
 	fmt.Println(days, len(days))
 	fmt.Println(people, len(people))
 	// len() to get the length of arr
 
+	// slices (use arrays under the hood)
+
+	var results = []int{28, 34, 56}
+	// slices have no fixed elements
+	results[2] = 43 //56 instead of 43
+
+	results = append(results, 89)
+	// can append with slices only!!! it adds 89 to the slices
+
+	fmt.Println(results, len(results))
 }
