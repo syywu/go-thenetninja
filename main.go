@@ -306,5 +306,15 @@ func main() {
 			// k instead on index
 		}
 
+		// ints as key type
+		phonebook := map[int]string{
+			267584967: "mario",
+			984759373: "luigi",
+			845775485: "peach",
+		}
+
+		fmt.Println(phonebook)            //map[267584967:mario 845775485:peach 984759373:luigi]
+		fmt.Println(phonebook[845775485]) //mario
+
 	}
 }
