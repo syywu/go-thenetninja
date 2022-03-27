@@ -6,8 +6,26 @@ import (
 	"strings"
 )
 
+// functions
+
+func sayGreeting(n string) {
+	fmt.Printf("Good morning %v \n", n)
+}
+
+// n = name and is of type string
+
+func sayBye(n string) {
+	fmt.Printf("Goodbye %v \n", n)
+}
+
 // only one main func at the entry file. must called main to match with package
 func main() {
+
+	// functions
+
+	sayGreeting("mario")
+	sayGreeting("luigi")
+	sayBye("mario")
 
 	// string
 	var nameOne string = "mario"
