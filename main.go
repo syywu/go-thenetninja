@@ -155,6 +155,7 @@ func main() {
 	}
 
 	// for in example
+	// uses := range instead of in
 	for index, val := range char {
 		fmt.Printf("the value at position %v is %v \n", index, val)
 		val = "new string"
@@ -184,5 +185,24 @@ func main() {
 		fmt.Println("num is less than 40")
 	} else {
 		fmt.Println("num is not less than 40")
+	}
+
+	nom := []string{"mario", "luigi", "yoshi", "peach", "bowser"}
+
+	for index, val := range nom {
+		if index == 1 {
+			fmt.Println("continuing at pos", index)
+			continue //continues the loop
+			// continuing at pos 1
+		}
+		if index > 2 {
+			fmt.Println("breaking at pos", index)
+			break //breaks away from loop
+			// breaking at pos 3 as it is > 2. nothing runs after this
+		}
+		fmt.Printf("the value at pos %v is %v \n", index, val)
+		//the value at pos 0 is mario. this is the input as index is not equal to 0
+		// the value at pos 2 is yoshi as index != 1
+
 	}
 }
