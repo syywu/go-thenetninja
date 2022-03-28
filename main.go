@@ -82,11 +82,22 @@ func main() {
 	fmt.Println("value at memory address:", *m) //value at memory address: tifa
 
 	/*
-		|--name---|----m----|
-		|  0x001  |  0x002  |
-		|---------|---------|
-		| "tifa"  | p0x001  |
-		|---------|---------|
+		|--name---|----m----|---x---|
+		|  0x001  |  0x002  | 0x003 |
+		|---------|---------|-------|
+		| "tifa"  | p0x001  | p0x001|
+		|---------|---------|-------|
+
+		when we pass var into func, go makes a copy of the var inside of the func so makes copy of this pointer arg and puts in into own memory block
+		x makes a carbon copy of m and points it to the original var name
+
+		m := &name
+		updateName(x)  ---> func updateName(x *string){
+								*x = "wedge" //using the derefernce operator on the pointer to access the underlying data which pointer points to which is the name val. when updating that val, original val is updated as well therefore it would return 'Wedge"
+								}
+
+		use pointers as arguments to access original underlying data within functions
+
 	*/
 
 	// updateName(name)
