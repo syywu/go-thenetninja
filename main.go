@@ -54,7 +54,7 @@ var score = 99.5 //can only be found outside main(), inside the package main sco
 
 // pass by values
 func updateName(x string) string {
-	x = "wedge" //updating x alone inside function will not change the original var from tifa to wedge. only changes a cop of the original variable
+	x = "wedge" //updating x alone inside function will not change the original var from tifa to wedge. only changes a local copy of the original variable
 	return x    //must return x to update the original stored var
 }
 
@@ -62,12 +62,30 @@ func updateMenu(y map[string]float64) {
 	y["coffee"] = 2.99 //this finds pointer and update the original val
 }
 
+// pointers point to another memory block which is the original val
+
 // only one main func at the entry file. must called main to match with package
 func main() {
 
 	// group A types -> strings, ints, bools, floats, arrays, structs
 	// non-pointer wrapper values
 	name := "tifa"
+
+	// & gets the memory address of the value (pointer)
+	fmt.Println("memory address of name is:", &name) //memory address of name is: 0xc000096210
+
+	// * gets the value at the specified memory address
+	m := &name
+	fmt.Println("memory address:", m)           //memory address: 0xc000096210
+	fmt.Println("value at memory address:", *m) //value at memory address: tifa
+
+	/*
+		|--name---|----m----|
+		|  0x001  |  0x002  |
+		|---------|---------|
+		| "tifa"  | p0x001  |
+		|---------|---------|
+	*/
 
 	// updateName(name)
 	name = updateName(name)
