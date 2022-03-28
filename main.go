@@ -58,6 +58,10 @@ func updateName(x string) string {
 	return x    //must return x to update the original stored var
 }
 
+func updateMenu(y map[string]float64) {
+	y["coffee"] = 2.99 //this finds pointer and update the original val
+}
+
 // only one main func at the entry file. must called main to match with package
 func main() {
 
@@ -69,6 +73,16 @@ func main() {
 	name = updateName(name)
 
 	fmt.Println(name) // returns wedge
+
+	// group B types -> slices, maps, functions
+	// pointer wrapper values
+	menu := map[string]float64{
+		"pie":       5.95,
+		"ice cream": 3.99,
+	}
+
+	updateMenu(menu)
+	fmt.Println(menu) //map[coffee:2.99 ice cream:3.99 pie:5.95]
 
 	/* packages
 	sayHello("mario")
@@ -144,12 +158,12 @@ func main() {
 
 	// Print & format
 
-	name := "Sam"
+	myName := "sam"
 	age := 28
 
-	fmt.Println("my name is", name, "and my age is", age)
-	fmt.Printf("my name is %v and my age is %v \n", name, age)
-	fmt.Printf("my name is %q and my age is %q \n", name, age)
+	fmt.Println("my name is", myName, "and my age is", age)
+	fmt.Printf("my name is %v and my age is %v \n", myName, age)
+	fmt.Printf("my name is %q and my age is %q \n", myName, age)
 	// order matters in printf. %_ = format specifiers, v stands for variable, q = quote
 	fmt.Printf("age is a type of %T \n", age) //T = type
 	fmt.Printf("you scored %f points! \n", 255.55)
