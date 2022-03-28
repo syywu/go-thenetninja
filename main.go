@@ -52,8 +52,23 @@ var score = 99.5 //can only be found outside main(), inside the package main sco
 // cannot use shorthand outside of functions
 // scoreTwo := 50 */
 
+// pass by values
+func updateName(x string) string {
+	x = "wedge" //updating x alone inside function will not change the original var from tifa to wedge. only changes a cop of the original variable
+	return x    //must return x to update the original stored var
+}
+
 // only one main func at the entry file. must called main to match with package
 func main() {
+
+	// group A types -> strings, ints, bools, floats, arrays, structs
+	// non-pointer wrapper values
+	name := "tifa"
+
+	// updateName(name)
+	name = updateName(name)
+
+	fmt.Println(name) // returns wedge
 
 	/* packages
 	sayHello("mario")
@@ -325,5 +340,6 @@ func main() {
 
 		phonebook[647583927] = "yoshi"
 		fmt.Println(phonebook) //map[267584967:mario 647583927:yoshi 845775485:peach 984759373:bowser]
+
 	}
 }
