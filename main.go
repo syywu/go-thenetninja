@@ -53,9 +53,10 @@ var score = 99.5 //can only be found outside main(), inside the package main sco
 // scoreTwo := 50 */
 
 // pass by values
-func updateName(x string) string {
-	x = "wedge" //updating x alone inside function will not change the original var from tifa to wedge. only changes a local copy of the original variable
-	return x    //must return x to update the original stored var
+// change x to be of tpe *string to accept pointers to whatever val is stored at that memory location
+func updateName(x *string) string {
+	*x = "wedge" //updating x alone inside function will not change the original var from tifa to wedge. only changes a local copy of the original variable
+	return *x    //return x- must return x to update the original stored var in the event of non pointers
 }
 
 func updateMenu(y map[string]float64) {
@@ -76,6 +77,7 @@ func main() {
 
 	// * gets the value at the specified memory address
 	m := &name
+
 	fmt.Println("memory address:", m)           //memory address: 0xc000096210
 	fmt.Println("value at memory address:", *m) //value at memory address: tifa
 
@@ -88,9 +90,12 @@ func main() {
 	*/
 
 	// updateName(name)
-	name = updateName(name)
+	// name = updateName(name)
+	// fmt.PrintIn(name) returns wedge
 
-	fmt.Println(name) // returns wedge
+	fmt.Println(name) // returns tifa
+	updateName(m)     // using pointer as arg, can pass &name directly instead of "m" as well
+	fmt.Println(name) //returns wedge
 
 	// group B types -> slices, maps, functions
 	// pointer wrapper values
