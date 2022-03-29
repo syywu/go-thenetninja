@@ -14,7 +14,11 @@ func newBill(name string) bill {
 		tip:   0,                    //sets tip to 0
 	}
 	return b
+}
 
-	// b is a bill object of inital values
+// b is a bill object of inital values
+
+// format the bill- receiver function. limits the function only to bill object. (b bill) b of type bill
+func (b bill) format() string {
 
 }
