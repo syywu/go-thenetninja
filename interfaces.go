@@ -6,6 +6,7 @@ import (
 )
 
 // shape interface
+// interface group tyoes together based on their methods. e.g. both area and circumf for square and circle
 type shape interface {
 	area() float64
 	circumf() float64
@@ -34,11 +35,15 @@ func (c circle) circumf() float64 {
 	return 2 * math.Pi * c.radius
 }
 
+// get info of both square and circle area&circumf
+// can pass in either square or circle into this func
+// interfaces allow functions to be used for muliple types
 func printShapeInfo(s shape) {
 	fmt.Printf("area of %T is: %0.2f \n", s, s.area())
 	fmt.Printf("circumference of %T is: %0.2f \n", s, s.circumf())
 }
 
+// interfaces allow date to be grouped
 func main() {
 	shapes := []shape{
 		square{length: 15.2},
@@ -49,6 +54,21 @@ func main() {
 
 	for _, v := range shapes {
 		printShapeInfo(v)
-		fmt.Println("---")
+		fmt.Println("---") //this is useed as a divider
+		/*
+			area of main.square is: 231.04
+			circumference of main.square is: 60.80
+			---
+			area of main.circle is: 176.71
+			circumference of main.circle is: 47.12
+			---
+			area of main.circle is: 475.29
+			circumference of main.circle is: 77.28
+			---
+			area of main.square is: 24.01
+			circumference of main.square is: 19.60
+			---
+
+		*/
 	}
 }
