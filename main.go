@@ -8,9 +8,13 @@ import (
 )
 
 // helper func so dont have to type out the same code everytime we want the user to type in something. just call this
+// this func accpets user input which is of type string and type error
+// accepts reader as arg as we dont want to type it out everytime. reader is of type *bufio.Reader
+// accpets promp of type string as arg for different q's asked
 func getInput(prompt string, r *bufio.Reader) (string, error) {
-	fmt.Print(prompt)
-	input, err := r.ReadString('\n')
+	fmt.Print(prompt) //print not println as we want everything to be on the same line
+	// get the info
+	input, err := r.ReadString('\n') //input as its more generic and grabs error too
 
 	return strings.TrimSpace(input), err
 }
@@ -39,9 +43,20 @@ func creatBill() bill {
 
 }
 
+// option for user to add items or tips, or even to save the bill
+func promptOptions(b bill) {
+	// create new local reader for this func
+	reader := bufio.NewReader(os.Stdin)
+	// press a to add items, press s to save, press t to add or update tips
+	opt, _ := getInput("Choose option(a- add items, s- to save, t- to add tips): ", reader)
+	fmt.Print(opt)
+
+}
+
 func main() {
 
 	mybill := creatBill()
+	promptOptions(mybill)
 
 	fmt.Println(mybill) //{sam's  bill map[] 0}
 
@@ -69,5 +84,3 @@ func main() {
 	// fmt.Println(mybill.format()) //pie: ... $5.99 cake: ... $3.99 total:                    ...$9.98
 
 }
-
-// option for user to add items or tips, or even to save the bill
