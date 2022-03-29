@@ -57,7 +57,7 @@ func (b *bill) format() string {
 }
 
 // update tip
-func (b *bill) updatedTip(tip float64) {
+func (b *bill) updateTip(tip float64) {
 	b.tip = tip //(*b).tip but go auto dereference it
 
 }

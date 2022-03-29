@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -56,12 +57,32 @@ func promptOptions(b bill) {
 		// need user input twice, once for item name and another for price
 		name, _ := getInput("Item name", reader) //gets reader from above (inside this func)
 		price, _ := getInput("Item price", reader)
-		fmt.Println(name, price)
-	case "s":
-		fmt.Println("You chose s")
+
+		// trun string input e.e "35" into float64
+		p, err := strconv.ParseFloat(price, 64) //args are the price and byts. takes in price and error if an error occurs
+		// if error is not nil which means there are errors
+		if err != nil {
+			fmt.Println("The price must be numbers")
+			promptOptions(b)
+		}
+		b.addItems(name, p)
+
+		fmt.Println("Items added - ", name, price)
+		promptOptions(b)
 	case "t":
-		tip, _ := getInput("Enter a tip amount ($): ", reader)
-		fmt.Println(tip)
+		tip, _ := getInput("Enter tip amount ($): ", reader)
+
+		t, err := strconv.ParseFloat(tip, 64)
+		if err != nil {
+			fmt.Println("The tip must be a number...")
+			promptOptions(b)
+		}
+		b.updateTip(t)
+
+		fmt.Println("tip has been updated to", tip)
+		promptOptions(b)
+	case "s":
+		fmt.Println("You chose to save the bill", b) //outputs the final bill when saved
 	default:
 		fmt.Println("Invalid option")
 		promptOptions(b) //fires this function again and asks them to choose again
@@ -74,7 +95,7 @@ func main() {
 	mybill := creatBill()
 	promptOptions(mybill)
 
-	fmt.Println(mybill) //{sam's  bill map[] 0}
+	// fmt.Println(mybill) //{sam's  bill map[] 0}
 
 	// mybill := newBill("mario's bill")
 
