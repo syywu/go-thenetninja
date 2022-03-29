@@ -1,0 +1,6 @@
+Bill Breakdown: 
+soup:                     ...$5.67 
+eggs:                     ...$2.99 
+tea bags:                 ...$1.05 
+tip:                      ...$4.90 
+total:                    ...$14.61 

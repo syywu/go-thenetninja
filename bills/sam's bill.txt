@@ -1,0 +1,5 @@
+Bill Breakdown: 
+coffee:                   ...$7.99 
+sugar:                    ...$0.99 
+tip:                      ...$5.00 
+total:                    ...$13.98 
