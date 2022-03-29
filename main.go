@@ -49,7 +49,23 @@ func promptOptions(b bill) {
 	reader := bufio.NewReader(os.Stdin)
 	// press a to add items, press s to save, press t to add or update tips
 	opt, _ := getInput("Choose option(a- add items, s- to save, t- to add tips): ", reader)
-	fmt.Print(opt)
+
+	// switch statment to evalute opt
+	switch opt {
+	case "a":
+		// need user input twice, once for item name and another for price
+		name, _ := getInput("Item name", reader) //gets reader from above (inside this func)
+		price, _ := getInput("Item price", reader)
+		fmt.Println(name, price)
+	case "s":
+		fmt.Println("You chose s")
+	case "t":
+		tip, _ := getInput("Enter a tip amount ($): ", reader)
+		fmt.Println(tip)
+	default:
+		fmt.Println("Invalid option")
+		promptOptions(b) //fires this function again and asks them to choose again
+	}
 
 }
 
